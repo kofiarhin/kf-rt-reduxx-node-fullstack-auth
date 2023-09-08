@@ -1,0 +1,42 @@
+# get users
+GET http://localhost:5000/users
+
+
+# clear database
+###
+DELETE http://localhost:5000/users
+
+
+# get user 
+###
+GET http://localhost:5000/users/64f082a3048d2604264bdbe4
+
+# get profile
+###
+http://localhost:5000/users/profile
+
+# create user 
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "kofi arhin", 
+    "email": "kofiarhin@gmail.com",
+    "password": "password"
+}
+
+# login user
+###
+POST http://localhost:5000/users/login
+Content-Type: application/json
+
+{
+    "email": "kofiarhin@gmail.com",
+    "password": "password"
+}
+
+
+# logout user
+###
+POST http://localhost:5000/users/logout
