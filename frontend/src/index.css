@@ -55,6 +55,15 @@ header .container a {
   font-size: 1rem;
 }
 
+header .container button {
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  display: inline-block;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
 .form-wrapper {
   width: 540px;
   max-width: 90%;

@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { registerUser } from "../features/user/userSlice";
+import { registerUser, reset } from "../features/user/userSlice";
 
 const Register = () => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    return () => {
+      dispatch(reset());
+    };
+  }, []);
 
   const { user, isError, message } = useSelector((state) => state.user);
   const navigate = useNavigate();

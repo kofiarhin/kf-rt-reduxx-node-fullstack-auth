@@ -48,7 +48,6 @@ const clearUsers = async (req, res) => {
 
 // get profile
 const getProfile = async (req, res) => {
-  console.log("get profile");
   res.status(200).json({ user: req.user });
 };
 
@@ -60,7 +59,7 @@ const createUser = async (req, res) => {
 
   try {
     if (!name || !email || !password) {
-      return res.status(400).json({ error: "please fill out all fields" });
+      return res.status(400).json({ error: "Please fill out all fields" });
     }
     const user = new User({
       name,
@@ -95,8 +94,6 @@ const loginUser = async (req, res) => {
 
     if (!user) return res.status(400).json({ error: "user not found" });
     // compare password
-
-    console.log(user);
 
     const isAuth = await bcrypt.compare(password, user.password);
     if (!isAuth)
